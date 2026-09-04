@@ -1,0 +1,6 @@
+{
+  "name": "TripWise - AI Budget Travel Planner",
+  "description": "Personalized budget travel planner that creates custom itineraries, itemized budget breakdowns, and smart cost optimizations within your budget.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

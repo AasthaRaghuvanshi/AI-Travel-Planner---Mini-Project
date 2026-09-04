@@ -1,0 +1,201 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --color-surface: #FDFCFB;
+  --color-surface-dim: #F0EDE8;
+  --color-surface-bright: #FFFFFF;
+  --color-surface-container-lowest: #FFFFFF;
+  --color-surface-container-low: #FAF9F7;
+  --color-surface-container: #F5F2ED;
+  --color-surface-container-high: #EAE6DF;
+  --color-surface-container-highest: #E0DBD2;
+  --color-on-surface: #1A1A1A;
+  --color-on-surface-variant: #666666;
+  --color-inverse-surface: #1A1A1A;
+  --color-inverse-on-surface: #FDFCFB;
+  --color-outline: #999999;
+  --color-outline-variant: #E5E5E5;
+  --color-surface-tint: #4A4A4A;
+  --color-primary: #1A1A1A;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #2A2A2A;
+  --color-on-primary-container: #E5E5E5;
+  --color-inverse-primary: #D1CEC7;
+  --color-secondary: #1A1A1A;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #F5F2ED;
+  --color-on-secondary-container: #1A1A1A;
+  --color-tertiary: #5A524C;
+  --color-on-tertiary: #FFFFFF;
+  --color-tertiary-container: #EBE5DE;
+  --color-on-tertiary-container: #3D352F;
+  --color-error: #9E2A2B;
+  --color-on-error: #FFFFFF;
+  --color-error-container: #FCE8E6;
+  --color-on-error-container: #681819;
+  --color-primary-fixed: #E8E5DF;
+  --color-primary-fixed-dim: #D5D1CA;
+  --color-on-primary-fixed: #1A1A1A;
+  --color-on-primary-fixed-variant: #4A4A4A;
+  --color-secondary-fixed: #2A2A2A;
+  --color-secondary-fixed-dim: #4A4A4A;
+  --color-on-secondary-fixed: #FFFFFF;
+  --color-on-secondary-fixed-variant: #DED9D2;
+  --color-tertiary-fixed: #EFEBE4;
+  --color-tertiary-fixed-dim: #DFD9D0;
+  --color-on-tertiary-fixed: #26211C;
+  --color-on-tertiary-fixed-variant: #4F463E;
+  --color-background: #FDFCFB;
+  --color-on-background: #1A1A1A;
+  --color-surface-variant: #EAE6DF;
+
+  --font-serif: 'Newsreader', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --spacing-gutter-mobile: 1rem;
+  --spacing-gutter-tablet: 1.5rem;
+  --spacing-gutter-desktop: 2rem;
+  --spacing-spacing-3xs: 0.25rem;
+  --spacing-spacing-2xs: 0.5rem;
+  --spacing-spacing-xs: 0.75rem;
+  --spacing-spacing-sm: 1rem;
+  --spacing-spacing-md: 1.5rem;
+  --spacing-spacing-lg: 2rem;
+  --spacing-spacing-xl: 3rem;
+  --spacing-spacing-2xl: 4rem;
+  --spacing-spacing-3xl: 6rem;
+}
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FDFCFB;
+    color: #1A1A1A;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Editorial Aesthetic Typography Helpers */
+.font-editorial-hero {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+.font-editorial-heading {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+.editorial-kicker {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #999999;
+  font-weight: 600;
+}
+
+/* Custom Typography Helpers matching Stitch classes */
+.font-display-hero {
+  font-size: 56px;
+  line-height: 68px;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+.font-display-hero-mobile {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+.font-headline-xl {
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+.font-headline-xl-mobile {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.font-headline-lg {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.font-headline-md {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+.font-headline-sm {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+.font-body-xl {
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+.font-body-lg {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+.font-body-md {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  font-weight: 400;
+}
+.font-label-lg {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+.font-label-md {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.font-label-sm {
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+/* Hide scrollbars when needed */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
