@@ -25,10 +25,6 @@ TripWise is an AI-powered travel planning web application that helps users creat
 
 The main objective of TripWise is to make travel planning easier, faster, and more personalized by generating a complete travel plan according to the user's requirements.
 
-
-npm install
-npm run dev
-
 ## Live Demo
  Open TripWise
  (https://tripwise-ai-budget-travel-planner.ai.studio)
