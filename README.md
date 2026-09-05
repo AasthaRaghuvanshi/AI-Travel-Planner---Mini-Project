@@ -28,3 +28,7 @@ The main objective of TripWise is to make travel planning easier, faster, and mo
 
 npm install
 npm run dev
+
+## Live Demo
+ Open TripWise
+ (https://tripwise-ai-budget-travel-planner.ai.studio)
